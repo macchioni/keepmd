@@ -1,32 +1,64 @@
 ---
 layout: layouts/base.njk
-title: Home
+permalink: /
+eleventyExcludeFromCollections: true
 ---
 
-<section class="hero">
+<section class="page-now">
 
-<h1>{{ site.title }}</h1>
+  <div class="section-label">now — {{ site.nowDate }}</div>
 
-<p>{{ site.description }}</p>
+  <div class="now-block">
+    <h2>Cosa sto<br>facendo <em>adesso.</em></h2>
+    <p>Una pagina aggiornata ogni mese. Progetti in corso, letture, pensieri sparsi.</p>
 
-</section>
+    <div class="now-items">
+      <div class="now-item">
+        <div class="now-glyph">✦</div>
+        <div>
+          <div class="now-item-label">Progetto</div>
+          <div class="now-item-text">Descrivi il tuo progetto principale.</div>
+        </div>
+      </div>
+      <div class="now-item">
+        <div class="now-glyph">◆</div>
+        <div>
+          <div class="now-item-label">Lettura</div>
+          <div class="now-item-text">Il libro che stai leggendo.</div>
+        </div>
+      </div>
+      <div class="now-item">
+        <div class="now-glyph">→</div>
+        <div>
+          <div class="now-item-label">Ascolto</div>
+          <div class="now-item-text">Cosa ascolti in questo periodo.</div>
+        </div>
+      </div>
+      <div class="now-item">
+        <div class="now-glyph">◯</div>
+        <div>
+          <div class="now-item-label">Reportage</div>
+          <div class="now-item-text">Il pezzo su cui stai lavorando.</div>
+        </div>
+      </div>
+    </div>
 
-<section class="feed">
+    <div class="section-label" style="margin-top: 48px; margin-bottom: 16px;">
+      ultimi articoli <span>{{ collections.posts | length }}</span>
+    </div>
 
-{% for post in collections.all | reverse %}
+    <div class="feed-list">
+      {% for post in collections.posts | reverse | limit(5) %}
+      <a class="feed-row" href="{{ post.url }}">
+        <div class="feed-glyph">✦</div>
+        <div class="feed-row-title">{{ post.data.title }}</div>
+        <div class="feed-row-meta">
+          <span class="feed-row-tag">{{ post.data.tags[1] }}</span>
+          <span>{{ post.date | date("dd MMM") }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
 
-<article class="post-preview">
-
-<h2>
-<a href="{{ post.url }}">
-{{ post.data.title }}
-</a>
-</h2>
-
-<p>{{ post.data.description }}</p>
-
-</article>
-
-{% endfor %}
-
+  </div>
 </section>

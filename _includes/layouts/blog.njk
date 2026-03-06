@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Blog
+permalink: /blog/
+---
+
+<section class="page-blog">
+
+  <div class="section-label">
+    blog — tutti i pezzi <span>{{ collections.posts | length }}</span>
+  </div>
+
+  <div class="blog-grid">
+    {% for post in collections.posts | reverse %}
+    <a class="blog-card" href="{{ post.url }}">
+      <div class="blog-card-tag">✦ {{ post.data.tags[1] }}</div>
+      <div class="blog-card-title">{{ post.data.title }}</div>
+      <div class="blog-card-excerpt">{{ post.data.description }}</div>
+      <div class="blog-card-date">{{ post.date | date("dd MMM yyyy") }}</div>
+    </a>
+    {% endfor %}
+  </div>
+
+</section>

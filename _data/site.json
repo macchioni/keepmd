@@ -1,5 +1,9 @@
 {
-  "title": "Test Theme",
-  "description": "Minimal Eleventy blog",
-  "author": "Your Name"
+  "title": "Nome Cognome",
+  "description": "Giornalista e scrittore",
+  "url": "https://tuosito.com",
+  "author": "Nome Cognome",
+  "email": "nome@dominio.it",
+  "twitter": "@handle",
+  "github": "handle"
 }

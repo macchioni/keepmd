@@ -1,40 +1,39 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="it">
 <head>
-
-<meta charset="utf-8">
-<title>{{ title or site.title }}</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="/css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
 </head>
-
 <body>
 
-<header class="header">
+  <nav>
+    <a class="logo" href="/">{{ site.title }}<span>.</span></a>
+    <ul>
+      <li><a href="/now" {% if page.url == '/now/' %}class="active"{% endif %}>now</a></li>
+      <li><a href="/about" {% if page.url == '/about/' %}class="active"{% endif %}>about</a></li>
+      <li><a href="/blog" {% if page.url == '/blog/' %}class="active"{% endif %}>blog</a></li>
+      <li><a href="/contact" {% if page.url == '/contact/' %}class="active"{% endif %}>contact</a></li>
+    </ul>
+  </nav>
 
-<a class="logo" href="/">
-{{ site.title }}
-</a>
+  <main>
+    {{ content | safe }}
+  </main>
 
-</header>
-
-<main class="container">
-
-{{ content | safe }}
-
-</main>
-
-<footer class="footer">
-
-<p>
-© {{ site.author }}
-</p>
-
-</footer>
+  <footer>
+    <span>{{ site.title }} — 11ty + netlify</span>
+    <span>
+      <a href="/feed.xml">rss</a> ·
+      <a href="https://github.com/{{ site.github }}" target="_blank">github</a>
+    </span>
+  </footer>
 
 </body>
 </html>
