@@ -1,0 +1,252 @@
+body {
+
+font-family:
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+
+line-height: 1.6;
+
+margin: 0;
+
+color: #111;
+
+background: white;
+
+}
+
+a {
+color: inherit;
+}
+
+.container {
+
+max-width: 760px;
+
+margin: auto;
+
+padding: 24px;
+
+}
+
+.header {
+
+max-width: 760px;
+
+margin: auto;
+
+padding: 24px;
+
+}
+
+.logo {
+
+text-decoration: none;
+
+font-weight: 600;
+
+color: inherit;
+
+}
+
+.hero {
+
+margin: 80px 0 60px;
+
+}
+
+.hero h1 {
+
+font-size: 2.4rem;
+
+margin-bottom: 8px;
+
+letter-spacing: -0.02em;
+
+}
+
+.hero p {
+
+color: #666;
+
+max-width: 40ch;
+
+}
+
+.feed article {
+
+padding: 20px 0;
+
+border-bottom: 1px solid #eee;
+
+}
+
+.feed article:last-child {
+
+border-bottom: none;
+
+}
+
+.post-preview {
+
+transition: opacity .2s ease;
+
+}
+
+.post-preview:hover {
+
+opacity: .7;
+
+}
+
+.post-preview h2 {
+
+margin: 0;
+
+font-size: 1.2rem;
+
+}
+
+.post-preview p {
+
+margin-top: 6px;
+
+color: #666;
+
+}
+
+.post h1 {
+
+margin-bottom: 4px;
+
+}
+
+.post {
+
+font-size: 1.05rem;
+
+line-height: 1.7;
+
+}
+
+.post p {
+
+margin: 1.2em 0;
+
+}
+
+.post h2 {
+
+margin-top: 2.2em;
+
+}
+
+.post h3 {
+
+margin-top: 1.8em;
+
+}
+
+.post pre {
+
+padding: 16px;
+
+overflow-x: auto;
+
+background: #f6f6f6;
+
+}
+
+.post code {
+
+font-family: ui-monospace, monospace;
+
+font-size: 0.9em;
+
+}
+
+.meta {
+
+color: #777;
+
+font-size: 0.9rem;
+
+margin-bottom: 24px;
+
+}
+
+.footer {
+
+max-width: 760px;
+
+margin: 60px auto;
+
+padding: 24px;
+
+font-size: 0.9rem;
+
+color: #777;
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+body {
+
+background: #0f0f10;
+
+color: #e6e6e6;
+
+}
+
+.feed article {
+
+border-color: #222;
+
+}
+
+.post-preview p {
+
+color: #aaa;
+
+}
+
+.meta {
+
+color: #999;
+
+}
+
+.post pre {
+
+background: #1c1c1e;
+
+}
+
+}
+
+header {
+margin-top: 24px;
+margin-bottom: 40px;
+}
+
+main {
+margin-bottom: 80px;
+}
+
+.header {
+max-width: 760px;
+margin: auto;
+padding: 24px 24px 0 24px;
+}
+
+
+.post {
+max-width: 65ch;
+}
+
+p {
+max-width: 65ch;
+}
